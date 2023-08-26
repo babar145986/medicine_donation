@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+    background-image: url('images/fbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+        
+        .registration-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .registration-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-2">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.html">
+    <img src="images/logo.png" width="50" height="50" alt="">
+    DonateMedi
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about_us.html">ABOUT-US</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contactus.html">CONTACT-US</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a href="registration.html" class="btn btn-primary">Create an account</a>
+    </form>
+  </div>
+</nav>
+    </div>
+    <div class="container mt-5">
+        <div class="registration-form">
+            <h2>Create an account</h2>
+            <hr>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <p>If you have an account please: <a href="login.html">Login</a></p>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and custom JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#registrationForm').submit(function(event) {
+                event.preventDefault();
+                
+                // Check if passwords match
+                var password = $('#password').val();
+                var confirmPassword = $('#confirmPassword').val();
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match");
+                    return;
+                }
+
+                // Perform registration logic here (not included in this example)
+                alert("Registration successful!");
+            });
+        });
+    </script>
+</body>
+</html>
